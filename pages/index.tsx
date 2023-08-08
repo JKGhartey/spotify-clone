@@ -1,4 +1,4 @@
-import type { NextPage } from "next";
+import type { GetServerSidePropsContext, NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 
@@ -29,7 +29,7 @@ const Home: NextPage = () => {
 
 export default Home;
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps(context : GetServerSidePropsContext) {
   const session = await getSession(context);
 
   return {
